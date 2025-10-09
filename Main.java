@@ -33,7 +33,7 @@ public class Main {
             printTablero(tablero);
             dead = true;
         }
-        
+        Globals.sc.nextLine(); //Ejemplo para usar scanner, en vez de sc.nextLine es Globals.sc.nextLine()        
 
 
     }
