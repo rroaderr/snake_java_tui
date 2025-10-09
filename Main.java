@@ -46,7 +46,7 @@ public class Main {
     public static void print (String[] pos)
     {
         int i = 0;
-        while (i != 26)
+        while (i != 27)
         {
             System.out.print(pos[i]);
             i++;
