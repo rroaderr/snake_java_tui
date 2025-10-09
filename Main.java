@@ -32,18 +32,19 @@ public class Main {
             printTablero(tablero);
             dead = true;
         }
+
         Globals.sc.nextLine(); //Ejemplo para usar scanner, en vez de sc.nextLine es Globals.sc.nextLine()        
 
 
     }
     public static void printTablero(String[][] tablero) {
 
-    for (int i = 0; i < tablero.length; i++) {
-        for (int j = 0; j < tablero[i].length; j++) {
-            System.out.print(tablero[i][j]);
-        }
-        System.out.println();
-    }        
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero[i].length; j++) {
+                System.out.print(tablero[i][j]);
+            }
+            System.out.println();
+        }        
 
     }
 }
