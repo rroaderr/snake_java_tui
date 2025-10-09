@@ -18,6 +18,7 @@ public class Main {
         String[] l14 = {"#", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "#"};
         String[] l15 = {"#", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "#"};
 
+        System.out.println("###########################");
         print(l1);
         print(l2);
         print(l3);
@@ -33,6 +34,7 @@ public class Main {
         print(l13);
         print(l14);
         print(l15);
+        System.out.println("###########################");
 
 
 
@@ -44,7 +46,7 @@ public class Main {
     public static void print (String[] pos)
     {
         int i = 0;
-        while (i != 22)
+        while (i != 26)
         {
             System.out.print(pos[i]);
             i++;
