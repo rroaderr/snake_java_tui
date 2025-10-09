@@ -22,8 +22,17 @@ public class Main {
         tablero[15] = new String[] {"#", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "#"};
         tablero[16] = new String[] {"#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#"};
 
-        
-        printTablero(tablero);
+        int Xpos = 7;
+        int Ypos = 13;
+        boolean dead = false;
+
+        while (dead != true)
+        {
+            tablero[Xpos][Ypos] = "Ö";
+
+            printTablero(tablero);
+            dead = true;
+        }
         
 
 
