@@ -30,6 +30,26 @@ public class Main {
             tablero[Xpos][Ypos] = "Ö";
 
             printTablero(tablero);
+
+            String movement = "0";
+
+            while (!(movement.toUpperCase().equals("W") ||
+                     movement.toUpperCase().equals("A") ||
+                     movement.toUpperCase().equals("S") ||
+                     movement.toUpperCase().equals("D"))) 
+            {
+
+                System.out.println("Move with WASD:");
+                movement = Globals.sc.nextLine();
+
+                if (!(movement.toUpperCase().equals("W") ||
+                     movement.toUpperCase().equals("A") ||
+                     movement.toUpperCase().equals("S") ||
+                     movement.toUpperCase().equals("D"))) {
+                     System.out.println("Use W, A, S, or D");
+                }
+            }
+            
             dead = true;
         }
 
