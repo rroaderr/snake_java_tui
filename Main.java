@@ -21,13 +21,13 @@ public class Main {
         tablero[15] = new String[] {"#", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "#"};
         tablero[16] = new String[] {"#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#"};
 
-        int Xpos = 7;
-        int Ypos = 13;
+        int Xpos = 13;
+        int Ypos = 7;
         boolean dead = false;
 
         while (dead != true)
         {
-            tablero[Xpos][Ypos] = "Ö";
+            tablero[Ypos] [Xpos] = "Ö";
 
             printTablero(tablero);
 
@@ -50,7 +50,35 @@ public class Main {
                 }
             }
             
-            dead = true;
+            if (movement.toUpperCase().equals("W"))
+            {
+                tablero [Ypos] [Xpos] = "_";
+                Ypos = Ypos - 1;
+                tablero [Ypos] [Xpos] = "Ö";
+
+            }
+            if (movement.toUpperCase().equals("S"))
+            {
+                tablero [Ypos] [Xpos] = "_";
+                Ypos = Ypos + 1;
+                tablero [Ypos] [Xpos] = "Ö";
+
+            }
+            if (movement.toUpperCase().equals("A"))
+            {
+                tablero [Ypos] [Xpos] = "_";
+                Xpos = Xpos - 1;
+                tablero [Ypos] [Xpos] = "Ö";
+
+            }
+            if (movement.toUpperCase().equals("D"))
+            {
+                tablero [Ypos] [Xpos] = "_";
+                Xpos = Xpos + 1;
+                tablero [Ypos] [Xpos] = "Ö";
+
+            }
+
         }
 
         Globals.sc.nextLine(); //Ejemplo para usar scanner, en vez de sc.nextLine es Globals.sc.nextLine()        
