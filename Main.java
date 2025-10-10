@@ -24,11 +24,30 @@ public class Main {
         int Xpos = 13;
         int Ypos = 7;
         boolean dead = false;
+        boolean food = false;
+        int Yfood;
+        int Xfood;
+        int score = 1;
 
         while (dead != true)
         {
             tablero[Ypos] [Xpos] = "Ö";
+            
+            while (food == false)
+            {
+                do
+                {
+                    Yfood = YposFood();
+                    Xfood = XposFood();
+                } 
+                while (tablero[Yfood][Xfood] == "Ö");
 
+                tablero[Yfood][Xfood] = "*";
+                food = true;
+            }
+           
+            
+           
             printTablero(tablero);
 
             String movement = "0";
@@ -52,30 +71,34 @@ public class Main {
             
             if (movement.toUpperCase().equals("W"))
             {
-                tablero [Ypos] [Xpos] = "_";
+                tablero[Ypos][Xpos] = "_";
                 Ypos = Ypos - 1;
-                tablero [Ypos] [Xpos] = "Ö";
+                if (tablero[Ypos][Xpos].equals("*")) score++;
+                tablero[Ypos][Xpos] = "Ö";
 
             }
             if (movement.toUpperCase().equals("S"))
             {
-                tablero [Ypos] [Xpos] = "_";
+                tablero[Ypos][Xpos] = "_";
                 Ypos = Ypos + 1;
-                tablero [Ypos] [Xpos] = "Ö";
+                if (tablero[Ypos][Xpos].equals("*")) score++;
+                tablero[Ypos][Xpos] = "Ö";
 
             }
             if (movement.toUpperCase().equals("A"))
             {
-                tablero [Ypos] [Xpos] = "_";
+                tablero [Ypos][Xpos] = "_";
                 Xpos = Xpos - 1;
-                tablero [Ypos] [Xpos] = "Ö";
+                if (tablero[Ypos][Xpos].equals("*")) score++;
+                tablero [Ypos][Xpos] = "Ö";
 
             }
             if (movement.toUpperCase().equals("D"))
             {
-                tablero [Ypos] [Xpos] = "_";
+                tablero [Ypos][Xpos] = "_";
                 Xpos = Xpos + 1;
-                tablero [Ypos] [Xpos] = "Ö";
+                if (tablero[Ypos][Xpos].equals("*")) score++;
+                tablero [Ypos][Xpos] = "Ö";
 
             }
 
@@ -85,6 +108,7 @@ public class Main {
 
 
     }
+
     public static void printTablero(String[][] tablero) {
 
         for (int i = 0; i < tablero.length; i++) {
@@ -94,5 +118,17 @@ public class Main {
             System.out.println();
         }        
 
+    }
+
+    public static int XposFood()
+    {
+        int Xfood = (int)(Math.random() * 25 + 1);
+        return(Xfood);
+    }
+
+    public static int YposFood()
+    {
+        int Yfood = (int)(Math.random() * 15 + 1);
+        return(Yfood);
     }
 }
