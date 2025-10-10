@@ -73,7 +73,14 @@ public class Main {
             {
                 tablero[Ypos][Xpos] = "_";
                 Ypos = Ypos - 1;
-                if (tablero[Ypos][Xpos].equals("*")) score++;
+                if (tablero[Ypos][Xpos].equals("*"))
+                {
+                    score++;
+                    food = false;
+                }
+
+                if (tablero[Ypos][Xpos].equals("#")) dead = true;
+
                 tablero[Ypos][Xpos] = "Ö";
 
             }
@@ -81,7 +88,14 @@ public class Main {
             {
                 tablero[Ypos][Xpos] = "_";
                 Ypos = Ypos + 1;
-                if (tablero[Ypos][Xpos].equals("*")) score++;
+                if (tablero[Ypos][Xpos].equals("*"))
+                {
+                    score++;
+                    food = false;
+                }
+
+                if (tablero[Ypos][Xpos].equals("#")) dead = true;
+
                 tablero[Ypos][Xpos] = "Ö";
 
             }
@@ -89,35 +103,67 @@ public class Main {
             {
                 tablero [Ypos][Xpos] = "_";
                 Xpos = Xpos - 1;
-                if (tablero[Ypos][Xpos].equals("*")) score++;
+                if (tablero[Ypos][Xpos].equals("*"))
+                {
+                    score++;
+                    food = false;
+                }
+
+                if (tablero[Ypos][Xpos].equals("#")) dead = true;
+
                 tablero [Ypos][Xpos] = "Ö";
 
             }
             if (movement.toUpperCase().equals("D"))
             {
                 tablero [Ypos][Xpos] = "_";
+                
                 Xpos = Xpos + 1;
-                if (tablero[Ypos][Xpos].equals("*")) score++;
+                if (tablero[Ypos][Xpos].equals("*"))
+                {
+                    score++;
+                    food = false;
+                }
+
+                if (tablero[Ypos][Xpos].equals("#")) dead = true;
+
                 tablero [Ypos][Xpos] = "Ö";
 
             }
 
         }
 
-        Globals.sc.nextLine(); //Ejemplo para usar scanner, en vez de sc.nextLine es Globals.sc.nextLine()        
-
+        System.out.println("You died");      
+        System.out.println("score: " + score);
 
     }
 
-    public static void printTablero(String[][] tablero) {
+ public static void printTablero(String[][] tablero) {
+
+        final String RESET = "\u001B[0m";
+        final String GREEN = "\u001B[32m"; // Snake
+        final String RED   = "\u001B[31m"; // Food
+        final String GREY  = "\u001B[90m"; // Background
+        final String WHITE = "\u001B[37m"; // Walls
 
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero[i].length; j++) {
-                System.out.print(tablero[i][j]);
+                String cell = tablero[i][j];
+
+                if (cell.equals("Ö")) { // Snake
+                    System.out.print(GREEN + "Ö" + RESET);
+                } else if (cell.equals("*")) { // Food
+                    System.out.print(RED + "*" + RESET);
+                } else if (cell.equals("_")) { // Background
+                    System.out.print(GREY + "_" + RESET);
+                } else if (cell.equals("#")) { // Walls
+                    System.out.print(WHITE + "#" + RESET);
+                } else {
+                    System.out.print(cell);
+                }
             }
             System.out.println();
-        }        
-
+        }
     }
 
     public static int XposFood()
