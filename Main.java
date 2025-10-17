@@ -22,7 +22,7 @@ public class Main {
         tablero[16] = new String[] {"#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#"};
 
         int Xpos = 13;
-        int Ypos = 7;
+        int Ypos = 7; //hola
         boolean dead = false;
         boolean food = false;
         int Yfood;
